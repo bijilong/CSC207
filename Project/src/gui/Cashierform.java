@@ -136,6 +136,8 @@ public final class Cashierform {
           "Check", JOptionPane.PLAIN_MESSAGE,
           null, null, null);
       try {
+        // if the current quantity is less than the threshold. Ask for order.
+        // order quantity depend on user input. 
         if (check.equals("yes")) {
           String quantity = (String) JOptionPane.showInputDialog(cashierpan,
               "The amount you want to order! ", "Order",
@@ -143,7 +145,9 @@ public final class Cashierform {
               null, null, null);
           new Order(prod.getName(), prod.getUpc(), order,
               String.valueOf(quantity));
+
         } else {
+          // use the default quantity which is three times the current threshold.
           Integer orderNum = three * Integer.valueOf(prod.getThreshold());
           new Order(prod.getName(), prod.getUpc(), order,
               String.valueOf(orderNum));
@@ -169,16 +173,19 @@ public final class Cashierform {
     name.setText(nam);
     FindProduct product = new FindProduct();
     Revenue revenue = new Revenue();
-
+    // scan the item.
     scanButton.addActionListener(e -> {
       String code = upc.getText();
       if (product.whetherExist(Mainpane.getInventory(), code)) {
         pro = product.search(Mainpane.getInventory(), code);
         orderPanel(pro);
+        // if the product is sold out.
         if (pro.getQuantity().equals("0")) {
           output.setText(output.getText()
               + "This product sold out,don't scan" + "\n");
         } else {
+          // sell the product and calculate the corresponding profit 
+          // and revenue .
           price = pro.getPrice();
           double priced = Double.parseDouble(price);
           totalCost += priced;
@@ -196,7 +203,7 @@ public final class Cashierform {
             + "have this product." + "\n");
       }
     });
-
+    // checkout button to show to total cose.
     checkout.addActionListener(e -> {
       output.setText(output.getText() + "\n" + "Your total cost is "
           + revenue.round(totalCost) + "." + "\n");
@@ -229,6 +236,8 @@ public final class Cashierform {
       }
 
     });
+    // set one product to be sale, and give the sale date.
+    // the price will be 0.8 times the original price.
     setsaleButton.addActionListener(e -> {
       String code = upc.getText();
 
@@ -245,6 +254,8 @@ public final class Cashierform {
 
 
     });
+    // set one product unsale. the sale date will be cleaned and
+    // the price will be the original price.
     unsaleButton.addActionListener(e -> {
       String code = upc.getText();
       pro = product.search(Mainpane.getInventory(), code);

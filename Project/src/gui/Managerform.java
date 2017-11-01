@@ -59,6 +59,7 @@ public final class Managerform {
     FileOperation fileOp = new FileOperation();
     Manager manager = new Manager();
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    // manager can check these details about our grocery store.
     viewOhButton.addActionListener(e -> viewOrderFrame(fileOp.getOhFilePath(),
         "Order History"));
     viewDrButton.addActionListener(e -> JOptionPane.showMessageDialog(frame,
