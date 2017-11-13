@@ -1,0 +1,328 @@
+#########
+# Step 1
+
+Code affected: none
+
+Created this file.
+#########
+# Step 2
+
+Code affected: all .java files
+
+Reformatted using the Google Java style formatter.
+#########
+# Step 3
+
+Code affected: 
+Caboose.java;Car.java;CornerRail.java;CrossRail.java;Engine.java;EWNRail.java;
+EWRail.java;EWSRail.java;GridLoc.java;NERail.java;NSERail.java;NSRail.java;
+NSWRail.java;NWRail.java;Rail.java;SERail.java;SNERail.java;SNWRail.java;
+StraightRail.java;SwitchRail.java;SWRail.java;TwoEndRail.java;WENRail.java;
+WESRail.java
+Flaw: 
+There is an unnecessary semicolon one line before the last brace.
+Fix:
+Delete them.
+#########
+# Step 4
+
+Code affected:
+Caboose.java
+Flaw:
+Constructor can be default since this class has no subclass and should not be
+accessed by others.
+Fix:
+Change public to default(package private).
+#########
+# Step 5
+
+Code affected: 
+Car.java
+Flaw: 
+Modifier not accurate.nextCar,cuttentRail attribute,draw, move and setRail method.
+Fix:
+Change public and protected modifier to default.
+#########
+# Step 6
+
+Code affected: 
+Car.java
+Flaw: 
+Modifier not accurate.dir attribute,SwitchStraight and SwitchCorner method.
+Fix:
+Change public and protected modifier to private.
+#########
+# Step 7
+
+Code affected: 
+Car.java
+Flaw: 
+If statement in SwitchStraight method can be simplified.
+Fix:
+Instead of checking if true, return true,else return false.Just return whether currentRaill
+is instance of SwitchRail.The same result as before.
+#########
+# Step 8
+
+Code affected: 
+CornerRail.java
+Flaw: 
+Modifier not accurate.CornerRail constructor.
+Fix:
+Change public modifier to dedault.
+#########
+# Step 9
+
+Code affected: 
+CrossRail.java
+Flaw: 
+Modifier not accurate. All attributes in this class and validDir method.
+Fix:
+Change protected modifier to private.
+#########
+# Step 10
+
+Code affected: 
+CrossRail.java
+Flaw: 
+Modifier not accurate. CorssRail constructor.
+Fix:
+Change public modifier to default.
+#########
+# Step 11
+
+Code affected: 
+Direction.java
+Flaw: 
+Modifier not accurate.equals method.
+Fix:
+Change public modifier to default.
+#########
+# Step 12
+
+Code affected: 
+Direction.java
+Flaw: 
+Replace if statement in opposite method to switch.
+Fix:
+Rewrite this method use switch.
+#########
+# Step 13
+
+Code affected: 
+Engine.java
+Flaw: 
+Modifier not accurate. Engine constructor.
+Fix:
+Change public modifier to dedault.
+#########
+# Step 14
+
+Code affected: 
+EWNRail.java;EWRail.java;EWSRail.java;NERail.java
+Flaw: 
+Modifier not accurate. EWNRail,EWRail,EWSRail,NERail constructor.
+Fix:
+Change public modifier to default.
+# Step 15
+
+Code affected:
+NSERail.java;NSRail.java;NSWRail.java;NWRail.java
+Flaw:
+Modifier not accurate. NSERail,NSRail,NSWRail,NWRail constructor.
+Fix:
+Change public modifier to default.
+# Step 16
+
+Code affected: 
+GridLoc.java
+Flaw: 
+Modifier not accurate. row and col attributes.
+Fix:
+Change public modifier to dedault.
+# Step 17
+
+Code affected:
+SERail.java;SNERail.java;SNWRail.java;SWRail.java;WENRail.java;WESRail.java
+Flaw:
+Modifier not accurate.SERail,SNERail,SNWRail,SWRail,WENRail,WESRail constructor.
+Fix:
+Change public modifier to default.
+#########
+# Step 18
+
+Code affected: 
+Rail.java
+Flaw: 
+Modifier not accurate.haveATrain,currentCar attribute
+Fix:
+Change public to private because only used in this class.
+#########
+# Step 19
+
+Code affected: 
+Rail.java
+Flaw: 
+Modifier not accurate.Rail constructor,occupied,enter, leave method and location attribute.
+location attribute used in other class so has to be private instead of default.
+Fix:
+Change public to default modifier. 
+# Step 20
+
+Code affected: 
+StraightRail.java
+Flaw: 
+Modifier not accurate. StraightRail constructor.
+Fix:
+Change public modifier to dedault.
+#########
+# Step 21
+
+Code affected: 
+SwitchRail.java
+Flaw: 
+Modifier not accurate.x1,y1,x2,y2,x3,y3,end1,end2,end3,neighbour1,neighbour2,goingStraight attribute
+Fix:
+Change protected modifier to private beacause only used in themselves.
+# Step 22
+
+Code affected: 
+TwoEndRail.java
+Flaw: 
+Modifier not accurate.end1,end2,neighbour1,neighbour2 attribute.
+Fix:
+Change protected to private modifier because these attrubutes only used in themselves.
+#########
+# Step 23
+
+Code affected: 
+SwitchRail.java;TwoEndRail.java
+Flaw: 
+Modifier not accurate.validDir method.
+Fix:
+Change protected to private modifier.
+#########
+# Step 24
+
+Code affected: 
+TwoEndRail.java
+Flaw: 
+Modifier not accurate.TwoEndRail constructor.
+Fix:
+Change public modifier to default.
+# Step 25
+
+Code affected: 
+Track.java
+Flaw: 
+Modifier not accurate.
+Fix:
+Change public modifier to default and protected to private.
+# Step 26
+
+Code affected: 
+TrackPanel.java
+Flaw: 
+Modifier not accurate.
+Fix:
+Change default to private modifier and public to default.
+# Step 27
+
+Code affected: 
+Train.java
+Flaw: 
+Modifier not accurate.
+Fix:
+Change protected to private modifier and public to default.
+#########
+# Step 28
+
+Code affected: 
+ColorUtils.java
+Flaw: 
+This class is never used.
+Fix:
+Delete this class.
+#########
+# Step 29
+
+Code affected:
+Track.java; TrackPanel.java; TrainSimulation.java
+Flaw:
+Modifier not accurate.For loop in TrackPanel.Button in Track
+Fix:
+Change modifier. Use foreach instead of for loop.Clean up unnecessary code.
+#########
+# Step 30
+
+Code affected:
+EWNRail.java; EWSRail.java; NSERail.java; NSWRail.java;  SNERail.java; SNWRail.java
+WENRail.java; WESRail.java; ThreeDirRail.java
+Flaw:
+These eight classes have a lot in common.
+Fix:
+Mix these eight classes into one java file called ThreeDirRail.java.
+#########
+# Step 31
+
+Code affected:
+Track.java; SwitchRail.java;ThreeDirRail.java; Car.java
+Flaw:
+SwitchRail does not have to be abstract.
+Fix:
+Change SwitchRail to public,create a method setVariable and rewrite toString method.
+Replace the Rails class in Track.java and Car.java use new class ThreeDirRail.
+#########
+# Step 32
+
+Code affected:
+EWNRail.java; EWSRail.java; NSERail.java; NSWRail.java;  SNERail.java; SNWRail.java
+WENRail.java; WESRail.java;
+Flaw:
+Never used class.
+Fix:
+Delete these eight classes.
+#########
+# Step 33
+
+Code affected:
+NERail.java; NWRail.java; SERail.java; SWRail.java; TwoDirCor.java; Track.java; Car.java;
+CornerRail.java
+Flaw:
+These four classes have a lot in common.
+Fix:
+Do the same step as 30-32, Mix these four classes into one file called TwoDirCor.java.
+Make CornerRail public and create method setVariable, rewrite toString and delete these four classes.
+#########
+# Step 34
+
+Code affected:
+EWRail.java; NSRail.java; TwoDirStr.java; Track.java; StraightRail.java
+CornerRail.java
+Flaw:
+These two classes have a lot in common.
+Fix:
+Do the same step as 30-32, Mix these two classes into one file called TwoDirStr.java.
+Make StraightRail public and create method setVariable and Delete these two classes.
+#########
+# Step 35
+
+Code affected:
+Car.java; CrossRail.java; SwitchRail.java;
+CornerRail.java
+Flaw:
+Recalculating same value over and over, too many duplicate codes.
+Fix:
+Use a variable to do the calculate.Next time use this variable instead of recalculating. Write helper
+function to reduce duplicate codes or delete redundant code.
+#########
+# Step 36
+
+Code affected:
+Car.java; Caboose.java; Engine.java;
+CornerRail.java
+Flaw:
+These two class are very similar.
+Fix:
+Change Car class as default class and add a constructor color. Delete Caboose.java and Engine.java
+file.Replace where mentioned these two classes.
